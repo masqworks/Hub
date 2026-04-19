@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masqueraide Workshop Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { 
+            /* Lightened overlay: top 20% to bottom 70% to make the orange pop */
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.7)), url('vectorstock_751427.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: #09090b; 
+            color: #fafafa;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
 
+        .bento-card { 
+            background: rgba(18, 18, 18, 0.75); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        .bento-card:hover { border-color: #dc2626; transform: translateY(-2px); }
+    </style>
+</head>
+<body class="p-4 flex flex-col items-center justify-center min-h-screen">
+
+    <header class="max-w-xl w-full mb-2 text-center -mt-16">
+        <img src="Logopit_1610381027557.png" alt="Masqueraide Workshop" class="w-full max-w-[280px] mx-auto mb-1 object-contain">
+        <h2 class="text-white uppercase tracking-[0.4em] text-sm font-black italic drop-shadow-lg">The Central Hub</h2>
+    </header>
+
+    <main class="max-w-md w-full space-y-2.5">
+        
+        <a href="https://youtube.com/@masqueraideworkshop?si=e95o00Aq6hJoAsij" target="_blank" class="bento-card p-4 rounded-2xl flex items-center justify-between group">
+            <div class="flex items-center gap-4">
+                <span class="text-lg text-red-600 font-bold">YT</span>
+                <div>
+                    <h2 class="font-bold text-base leading-tight">YouTube Channel</h2>
+                    <p class="text-zinc-300 text-[10px]">Technical Tutorials & Guides</p>
+                </div>
+            </div>
+            <span class="text-zinc-400 group-hover:text-white transition text-sm">&rarr;</span>
+        </a>
+
+        <a href="https://www.tiktok.com/@masqueraide_workshop?_r=1&_t=ZT-95ftzPB1BVO" target="_blank" class="bento-card p-4 rounded-2xl flex items-center justify-between group">
+            <div class="flex items-center gap-4">
+                <span class="text-lg text-zinc-200 font-bold">TK</span>
+                <div>
+                    <h2 class="font-bold text-base leading-tight">TikTok</h2>
+                    <p class="text-zinc-300 text-[10px]">Short-form BTS Teasers</p>
+                </div>
+            </div>
+            <span class="text-zinc-400 group-hover:text-white transition text-sm">&rarr;</span>
+        </a>
+
+        <a href="https://www.facebook.com/share/18P1kjpnZG/" target="_blank" class="bento-card p-4 rounded-2xl flex items-center justify-between group">
+            <div class="flex items-center gap-4">
+                <span class="text-lg text-blue-500 font-bold">FB</span>
+                <div>
+                    <h2 class="font-bold text-base leading-tight">Facebook</h2>
+                    <p class="text-zinc-300 text-[10px]">Community Updates</p>
+                </div>
+            </div>
+            <span class="text-zinc-400 group-hover:text-white transition text-sm">&rarr;</span>
+        </a>
+
+    </main>
+
+    <footer class="max-w-md w-full mt-4 pt-4 border-t border-white/10 text-center">
+        <h3 class="text-[9px] font-bold uppercase tracking-widest text-zinc-200 mb-1 drop-shadow-md">Contact Us</h3>
+        <p class="text-sm font-medium text-white drop-shadow-md">masqueraideworkshop@gmail.com</p>
+        <p class="text-zinc-400 text-[8px] tracking-widest uppercase mt-4 font-semibold">
+            &copy; 2026 Masqueraide Workshop LLC
+        </p>
+    </footer>
+
+</body>
+</html>
