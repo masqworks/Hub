@@ -23,6 +23,14 @@
             background-repeat: no-repeat; z-index: 1;
         }
 
+        /* Desktop Fix */
+        @media (min-width: 1024px) {
+            .theater-stage {
+                background-size: contain;
+                background-position: center;
+            }
+        }
+
         .video-player-container {
             position: relative; width: 100%; max-width: 450px;
             aspect-ratio: 9/16; display: flex;
@@ -50,15 +58,12 @@
     </style>
 </head>
 <body>
-
     <div class="theater-stage"></div>
-
     <div class="video-player-container">
         <div class="video-frame">
-            <iframe id="movieScreen" src="" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+            <iframe id="movieScreen" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
     </div>
-
     <a href="entrance.html" class="exit-link">RETURN TO BOX OFFICE</a>
 
     <script>
@@ -66,13 +71,11 @@
         const videoId = urlParams.get('vid');
         const screen = document.getElementById('movieScreen');
 
-        // Added 'origin' and 'enablejsapi' to help bypass embed blocks
         if (videoId) {
-            screen.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0&enablejsapi=1&origin=${window.location.origin}`;
+            screen.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0`;
         } else {
             screen.src = `https://www.youtube.com/embed/cE0lxvVm7AE?autoplay=1&modestbranding=1&rel=0`;
         }
     </script>
-
 </body>
 </html>
