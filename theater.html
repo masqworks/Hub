@@ -27,13 +27,13 @@
             margin: 0 auto;
         }
 
-        /* The "Tuck" Strategy: Slightly larger to hide edges under your frame */
+        /* Adjusted to fully bridge the gap at the bottom of the frame */
         .video-wrapper {
             position: absolute;
-            top: 10.8%;    /* Nudged up from 11.2% to close that top gap */
-            left: 9.5%;    /* Widened slightly to tuck behind the sides */
+            top: 11.2%;    
+            left: 9.5%;    
             width: 81%;    
-            aspect-ratio: 16/9; 
+            height: 18.2%; /* Increased height to tuck behind the bottom metal bar */
             z-index: 10;
             overflow: hidden;
             background: #000;
