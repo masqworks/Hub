@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Masqworks Theater</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -18,45 +18,53 @@
             overflow: hidden;
         }
 
-        /* 1. The Container: This holds your image as a background */
-        .theater-box {
+        /* Forces a strict 9:16 container that won't warp */
+        .theater-viewport {
             position: relative;
-            width: 100%;
-            max-width: 450px; 
-            aspect-ratio: 9/16;
+            width: 100vw;
+            height: 177.77vw; /* Precise 9:16 ratio */
+            max-width: 450px;
+            max-height: 800px;
             background-image: url('drive_in_screen.png');
-            background-size: 100% 100%;
+            background-size: contain;
             background-repeat: no-repeat;
+            background-position: center;
         }
 
-        /* 2. The Video: Positioned precisely over the hole in the image */
-        .video-overlay {
+        /* The Video: Coordinates adjusted for the 'contain' fit */
+        .video-layer {
             position: absolute;
-            /* These coordinates match your frame location */
             top: 11.2%;    
-            left: 9.5%;    
-            width: 81%;    
-            height: 18.3%; 
+            left: 9.6%;    
+            width: 80.8%;  
+            height: 18.4%; /* Slightly deeper to ensure it hits the metal bar */
             background: #000;
+            z-index: 5;
         }
 
-        .video-overlay iframe {
+        .video-layer iframe {
             width: 100%;
             height: 100%;
             border: none;
+            display: block;
+        }
+
+        .nav-container {
+            position: absolute;
+            bottom: 8%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 10;
         }
 
         .exit-btn {
-            position: absolute;
-            bottom: 5%;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 12px 24px;
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid #444;
-            color: #999;
+            padding: 10px 20px;
+            background: rgba(15, 15, 15, 0.9);
+            border: 1px solid #333;
+            color: #666;
             text-decoration: none;
-            font-size: 12px;
+            font-size: 11px;
             letter-spacing: 2px;
             border-radius: 4px;
         }
@@ -64,15 +72,17 @@
 </head>
 <body>
 
-    <div class="theater-box">
-        <div class="video-overlay">
+    <div class="theater-viewport">
+        <div class="video-layer">
             <iframe 
-                src="https://www.youtube.com/embed/cE0lxvVm7AE?modestbranding=1&rel=0" 
+                src="https://www.youtube.com/embed/cE0lxvVm7AE?modestbranding=1&rel=0&iv_load_policy=3" 
                 allowfullscreen>
             </iframe>
         </div>
 
-        <a href="index.html" class="exit-btn">Return to Hub</a>
+        <div class="nav-container">
+            <a href="index.html" class="exit-btn">RETURN TO HUB</a>
+        </div>
     </div>
 
 </body>
