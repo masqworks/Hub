@@ -25,6 +25,15 @@
             background-size: 100% 100%;
         }
 
+        /* Desktop Fix: Centers image on wide screens */
+        @media (min-width: 1024px) {
+            .stage {
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+
         .bento-menu {
             position: absolute;
             top: 25%;
@@ -104,30 +113,15 @@
     </style>
 </head>
 <body>
-
     <div class="stage">
         <a href="index.html" class="back-btn">RETURN TO HUB</a>
-
         <div class="bento-menu">
             <div class="bento-header">NOW SHOWING</div>
-            
-            <a href="theater.html?vid=cE0lxvVm7AE" class="movie-link">
-                MASQUERAIDE WORKSHOP - PODCAST
-            </a>
-            
-            <a href="theater.html?vid=9a2FmgKNOTM" class="movie-link">
-                CRYPT TV: GRIMA
-            </a>
-            
-            <a href="theater.html?vid=xvgqhn-G-Es" class="movie-link">
-                CRYPT TV: LaVey
-            </a>
-            
-            <a href="theater.html?vid=k2zxVAHU5C0" class="movie-link">
-                KINGS OF HORROR: WHITE RAVEN
-            </a>
+            <a href="theater.html?vid=cE0lxvVm7AE" class="movie-link">MASQUERAIDE WORKSHOP - PODCAST</a>
+            <a href="theater.html?vid=9a2FmgKNOTM" class="movie-link">CRYPT TV: GRIMA</a>
+            <a href="theater.html?vid=xvgqhn-G-Es" class="movie-link">CRYPT TV: LaVey</a>
+            <a href="theater.html?vid=k2zxVAHU5C0" class="movie-link">KINGS OF HORROR: WHITE RAVEN</a>
         </div>
     </div>
-
 </body>
 </html>
