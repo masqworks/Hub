@@ -28,15 +28,16 @@
             margin: 0 auto;
         }
 
-        /* Perfectly aligned for the new squared-off frame */
+        /* The Final Alignment Nudge */
         .video-wrapper {
             position: absolute;
-            top: 15.8%;    
-            left: 14%;     
-            width: 72%;    
-            height: 60%;   
+            top: 15.6%;    /* Slightly up to avoid the top bar */
+            left: 13.8%;   /* Centering it better */
+            width: 72.5%;  /* Stretching the width slightly */
+            height: 64%;   /* Stretching height to tuck behind the bottom bar */
             z-index: 10;
             background: #000;
+            overflow: hidden;
         }
 
         .video-wrapper iframe {
@@ -45,7 +46,7 @@
             border: none;
         }
 
-        /* The New Graphic Layer */
+        /* The Graphic Layer */
         .screen-structure {
             position: absolute;
             top: 0;
@@ -88,7 +89,7 @@
     <div class="theater-stage">
         <div class="video-wrapper">
             <iframe id="mainPlayer" 
-                    src="https://www.youtube.com/embed/cE0lxvVm7AE?rel=0&modestbranding=1&autoplay=0" 
+                    src="https://www.youtube.com/embed/cE0lxvVm7AE?rel=0&modestbranding=1" 
                     allowfullscreen>
             </iframe>
         </div>
