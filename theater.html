@@ -9,35 +9,33 @@
         body { 
             background-color: #09090b; 
             color: #fafafa;
-            overflow: hidden;
+            overflow-x: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             min-height: 100vh;
             margin: 0;
-            padding: 10px;
-            font-family: sans-serif;
+            padding: 0;
         }
         
         .theater-stage {
             position: relative;
             width: 100%;
-            max-width: 1100px; 
-            aspect-ratio: 16/9;
+            max-width: 500px; /* Limits width on desktop so it stays vertical */
+            aspect-ratio: 9/16; /* Changed to match your new tall image */
             margin: 0 auto;
         }
 
-        /* The Final Alignment Nudge */
+        /* Video positioning for the new taller layout */
         .video-wrapper {
             position: absolute;
-            top: 15.6%;    /* Slightly up to avoid the top bar */
-            left: 13.8%;   /* Centering it better */
-            width: 72.5%;  /* Stretching the width slightly */
-            height: 64%;   /* Stretching height to tuck behind the bottom bar */
+            top: 10.5%;    
+            left: 10%;     
+            width: 80%;    
+            height: 18%;   /* YouTube is 16:9, so it only needs a small slice of the tall image */
             z-index: 10;
             background: #000;
-            overflow: hidden;
         }
 
         .video-wrapper iframe {
@@ -46,7 +44,6 @@
             border: none;
         }
 
-        /* The Graphic Layer */
         .screen-structure {
             position: absolute;
             top: 0;
@@ -62,7 +59,7 @@
         }
 
         .exit-link {
-            margin-top: 30px;
+            margin: 20px 0 40px 0;
             text-transform: uppercase;
             letter-spacing: 0.4em;
             font-size: 10px;
@@ -74,13 +71,6 @@
             padding: 12px 24px;
             border-radius: 6px;
             background: rgba(18, 18, 18, 0.5);
-            backdrop-filter: blur(4px);
-        }
-
-        .exit-link:hover {
-            color: #ffffff;
-            border-color: #dc2626;
-            background: #18181b;
         }
     </style>
 </head>
