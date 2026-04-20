@@ -6,106 +6,73 @@
     <title>Masqworks Theater</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* 1. The Foundation: No scrolling, pitch black background */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             background-color: #000;
-            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-
-        /* 2. The Stage: Matches your phone's 9:16 aspect ratio */
-        .stage {
-            position: relative;
-            width: 100%;
-            max-width: 450px; /* Limits size on desktop but fills mobile */
-            aspect-ratio: 9/16;
-            background-color: #000;
-        }
-
-        /* 3. The Video: Tucked behind the frame */
-        .video-layer {
-            position: absolute;
-            top: 11.2%;    /* Aligned to the top of your red frame */
-            left: 9.5%;    /* Centered horizontally in the frame */
-            width: 81%;    /* Fits the frame width */
-            height: 18.5%; /* Fills the vertical gap to the 'Now Showing' bar */
-            z-index: 1;    /* Sits BEHIND the dashboard */
-            background: #000;
             overflow: hidden;
         }
 
-        .video-layer iframe {
+        /* 1. The Container: This holds your image as a background */
+        .theater-box {
+            position: relative;
             width: 100%;
-            height: 100%;
-            border: none;
-            /* Ensures the video fills the 18.5% box without black bars */
-            object-fit: cover;
-        }
-
-        /* 4. The Overlay: Your dashboard PNG with the transparent hole */
-        .overlay-layer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 2; /* Sits ON TOP of the video */
+            max-width: 450px; 
+            aspect-ratio: 9/16;
             background-image: url('drive_in_screen.png');
             background-size: 100% 100%;
             background-repeat: no-repeat;
-            pointer-events: none; /* Clicks go through to the video play button */
         }
 
-        /* 5. The Navigation */
-        .nav-layer {
+        /* 2. The Video: Positioned precisely over the hole in the image */
+        .video-overlay {
             position: absolute;
-            bottom: 5%;
+            /* These coordinates match your frame location */
+            top: 11.2%;    
+            left: 9.5%;    
+            width: 81%;    
+            height: 18.3%; 
+            background: #000;
+        }
+
+        .video-overlay iframe {
             width: 100%;
-            display: flex;
-            justify-content: center;
-            z-index: 3;
+            height: 100%;
+            border: none;
         }
 
         .exit-btn {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
             padding: 12px 24px;
-            background: rgba(20, 20, 20, 0.9);
-            border: 1px solid #333;
-            color: #888;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #444;
+            color: #999;
             text-decoration: none;
-            text-transform: uppercase;
             font-size: 12px;
             letter-spacing: 2px;
             border-radius: 4px;
-            transition: 0.3s;
-        }
-
-        .exit-btn:hover {
-            border-color: #dc2626;
-            color: #fff;
         }
     </style>
 </head>
 <body>
 
-    <div class="stage">
-        <div class="video-layer">
+    <div class="theater-box">
+        <div class="video-overlay">
             <iframe 
                 src="https://www.youtube.com/embed/cE0lxvVm7AE?modestbranding=1&rel=0" 
                 allowfullscreen>
             </iframe>
         </div>
 
-        <div class="overlay-layer"></div>
-
-        <div class="nav-layer">
-            <a href="index.html" class="exit-btn">Return to Hub</a>
-        </div>
+        <a href="index.html" class="exit-btn">Return to Hub</a>
     </div>
 
 </body>
