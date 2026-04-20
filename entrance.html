@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Box Office | Masqworks Drive-In</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body, html {
+            margin: 0; padding: 0;
+            width: 100%; height: 100%;
+            background-color: #000;
+            display: flex; justify-content: center; align-items: center;
+            overflow: hidden;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .stage {
+            position: relative;
+            width: 100vw;
+            height: 177.7vw;
+            max-width: 450px;
+            max-height: 800px;
+            background-image: url('drive_in_entrance_bg_v2.png'); 
+            background-size: 100% 100%;
+        }
+
+        /* The Expandable Bento Box */
+        .bento-menu {
+            position: absolute;
+            top: 22%; /* Positioned near the signage */
+            left: 52%;
+            width: 42%;
+            /* min-height ensures it looks like a board even with one link */
+            min-height: 100px; 
+            /* max-height prevents it from hitting the car dashboard */
+            max-height: 40%; 
+            background: rgba(0, 0, 0, 0.75); /* Semi-transparent black */
+            backdrop-filter: blur(4px); /* Frosty glass effect */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            overflow-y: auto; /* Adds a scrollbar if the list gets too long */
+            z-index: 20;
+        }
+
+        .bento-header {
+            color: #ef4444; /* Masqueraide Red */
+            font-size: 10px;
+            font-weight: 900;
+            text-align: center;
+            border-bottom: 1px solid #333;
+            padding-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .movie-link {
+            color: #ccc;
+            font-size: 9px;
+            text-decoration: none;
+            padding: 6px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.03);
+            transition: all 0.2s;
+            line-height: 1.3;
+        }
+
+        .movie-link:hover {
+            background: #ef4444;
+            color: #fff;
+            transform: scale(1.02);
+        }
+
+        .back-btn {
+            position: absolute;
+            bottom: 5%;
+            left: 5%;
+            color: #444;
+            text-decoration: none;
+            font-size: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stage">
+        <div class="bento-menu">
+            <div class="bento-header">NOW SHOWING</div>
+            
+            <a href="theater.html?vid=cE0lxvVm7AE" class="movie-link">
+                MASQUERAIDE PODCAST: EP 1
+            </a>
+
+            <a href="theater.html?vid=p8u_k2LIZ_0" class="movie-link">
+                CRYPT TV: THE LOOK-SEE
+            </a>
+            
+            <a href="theater.html?vid=j76uI7G8fXo" class="movie-link">
+                CRYPT TV: BIRCH
+            </a>
+
+            </div>
+
+        <a href="index.html" class="back-btn">RETURN TO HUB</a>
+    </div>
+
+</body>
+</html>
