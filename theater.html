@@ -7,97 +7,45 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
+            margin: 0; padding: 0;
+            width: 100%; height: 100%;
             background-color: #000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            overflow: hidden;
-            font-family: sans-serif;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: flex-start;
+            overflow: hidden; font-family: sans-serif;
         }
 
         .theater-stage {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
             background-image: url('drive_in_bg_static.png'); 
-            background-size: cover;
-            background-position: center bottom;
-            background-repeat: no-repeat;
-            z-index: 1;
+            background-size: cover; background-position: center bottom;
+            background-repeat: no-repeat; z-index: 1;
         }
 
         .video-player-container {
-            position: relative;
-            width: 100%;
-            max-width: 450px;
-            aspect-ratio: 9/16;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            z-index: 10;
-            margin-top: 10vh;
+            position: relative; width: 100%; max-width: 450px;
+            aspect-ratio: 9/16; display: flex;
+            justify-content: center; align-items: flex-start;
+            z-index: 10; margin-top: 10vh;
         }
 
         .video-frame {
-            position: relative;
-            width: 90%;
-            aspect-ratio: 16/9;
-            background-color: #000;
+            position: relative; width: 90%; aspect-ratio: 16/9;
+            background-color: #000; border: 2px solid #222;
+            overflow: hidden; border-radius: 6px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-            border: 2px solid #222;
-            overflow: hidden;
-            border-radius: 6px;
         }
 
-        .video-frame iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-        }
-
-        .title-overlay {
-            position: absolute;
-            top: 2vh;
-            width: 100%;
-            text-align: center;
-            z-index: 20;
-            pointer-events: none;
-        }
-
-        .title-text {
-            color: #fafafa;
-            font-size: 14px;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 0.4em;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 8px 16px;
-            border-radius: 4px;
-        }
+        .video-frame iframe { width: 100%; height: 100%; border: none; }
 
         .exit-link {
-            position: absolute;
-            bottom: 5vh;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 12px 24px;
-            background: rgba(10, 10, 10, 0.95);
-            border: 1px solid #333;
-            color: #71717a;
-            text-decoration: none;
-            font-size: 10px;
-            font-weight: 900;
-            letter-spacing: 0.3em;
-            border-radius: 4px;
-            z-index: 30;
+            position: absolute; bottom: 5vh; left: 50%;
+            transform: translateX(-50%); padding: 12px 24px;
+            background: rgba(10, 10, 10, 0.95); border: 1px solid #333;
+            color: #71717a; text-decoration: none;
+            font-size: 10px; font-weight: 900;
+            letter-spacing: 0.3em; border-radius: 4px; z-index: 30;
         }
     </style>
 </head>
@@ -105,32 +53,22 @@
 
     <div class="theater-stage"></div>
 
-    <div class="title-overlay">
-        <span class="title-text">MASQWORKS DRIVE-IN</span>
-    </div>
-
     <div class="video-player-container">
         <div class="video-frame">
-            <iframe 
-                id="movieScreen"
-                src="" 
-                allow="autoplay; encrypted-media" 
-                allowfullscreen>
-            </iframe>
+            <iframe id="movieScreen" src="" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 
     <a href="entrance.html" class="exit-link">RETURN TO BOX OFFICE</a>
 
     <script>
-        // Grab the vid ID from the link (e.g., theater.html?vid=p8u_k2LIZ_0)
         const urlParams = new URLSearchParams(window.location.search);
         const videoId = urlParams.get('vid');
         const screen = document.getElementById('movieScreen');
 
-        // If a video ID is found, load it. If not, default to the podcast.
+        // Added 'origin' and 'enablejsapi' to help bypass embed blocks
         if (videoId) {
-            screen.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0`;
+            screen.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0&enablejsapi=1&origin=${window.location.origin}`;
         } else {
             screen.src = `https://www.youtube.com/embed/cE0lxvVm7AE?autoplay=1&modestbranding=1&rel=0`;
         }
