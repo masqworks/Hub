@@ -25,7 +25,6 @@
             background-size: 100% 100%;
         }
 
-        /* The Expandable Bento Box - Now with deeper glass effect */
         .bento-menu {
             position: absolute;
             top: 25%;
@@ -33,9 +32,9 @@
             width: 43%;
             min-height: 100px; 
             max-height: 40%; 
-            background: rgba(10, 10, 12, 0.85); 
-            backdrop-filter: blur(8px); 
-            border: 1px solid rgba(239, 68, 68, 0.2);
+            background: rgba(0, 0, 0, 0.9); /* Darker for better text pop */
+            backdrop-filter: blur(10px); 
+            border: 2px solid #FFFFFF; /* Crisp White Border */
             border-radius: 12px;
             padding: 14px;
             display: flex;
@@ -43,28 +42,29 @@
             gap: 12px;
             overflow-y: auto;
             z-index: 20;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
         }
 
         .bento-header {
-            color: #ef4444; 
-            font-size: 10px;
+            color: #ef4444; /* Keep the red for the branding */
+            font-size: 11px;
             font-weight: 900;
             text-align: center;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #444;
             padding-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
         .movie-link {
-            color: #e4e4e7;
-            font-size: 9px;
+            color: #FFFFFF; /* Full Bright White */
+            font-size: 10px;
+            font-weight: bold;
             text-decoration: none;
             padding: 10px;
             border-radius: 6px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             transition: all 0.2s ease;
             line-height: 1.3;
             text-transform: uppercase;
@@ -72,41 +72,35 @@
         }
 
         .movie-link:hover {
-            background: rgba(220, 38, 38, 0.2);
-            border-color: #ef4444;
-            color: #fff;
+            background: #FFFFFF;
+            color: #000;
             transform: scale(1.02);
         }
 
-        /* Moved to the top left sky area for high visibility */
         .back-btn {
             position: absolute;
             top: 4%;
             left: 5%;
-            color: rgba(255, 255, 255, 0.4);
+            color: #FFFFFF; /* Full Bright White */
             text-decoration: none;
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 900;
             letter-spacing: 2px;
             text-transform: uppercase;
             z-index: 30;
-            padding: 8px;
-            border-left: 2px solid #ef4444;
-            transition: color 0.3s ease;
+            padding: 8px 12px;
+            background: rgba(0,0,0,0.5);
+            border-left: 3px solid #ef4444;
+            backdrop-filter: blur(5px);
         }
 
         .back-btn:hover {
+            background: #ef4444;
             color: #fff;
         }
 
-        /* Custom scrollbar for the menu */
-        .bento-menu::-webkit-scrollbar {
-            width: 4px;
-        }
-        .bento-menu::-webkit-scrollbar-thumb {
-            background: #333;
-            border-radius: 10px;
-        }
+        .bento-menu::-webkit-scrollbar { width: 4px; }
+        .bento-menu::-webkit-scrollbar-thumb { background: #666; border-radius: 10px; }
     </style>
 </head>
 <body>
@@ -128,8 +122,7 @@
             <a href="theater.html?vid=j76uI7G8fXo" class="movie-link">
                 CRYPT TV: BIRCH
             </a>
-
-            </div>
+        </div>
     </div>
 
 </body>
