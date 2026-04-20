@@ -28,79 +28,76 @@
         .bento-menu {
             position: absolute;
             top: 25%;
-            left: 52%;
-            width: 43%;
-            min-height: 100px; 
-            max-height: 40%; 
-            background: rgba(0, 0, 0, 0.9); /* Darker for better text pop */
-            backdrop-filter: blur(10px); 
-            border: 2px solid #FFFFFF; /* Crisp White Border */
+            left: 45%; /* Shifted slightly left to accommodate the extra width */
+            width: 50%; /* Widened for better text fit */
+            max-height: 42%; 
+            background: rgba(0, 0, 0, 0.94); 
+            backdrop-filter: blur(12px); 
+            border: 2px solid #FFFFFF; 
             border-radius: 12px;
             padding: 14px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             overflow-y: auto;
             z-index: 20;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
         }
 
         .bento-header {
-            color: #ef4444; /* Keep the red for the branding */
+            color: #ef4444; 
             font-size: 11px;
             font-weight: 900;
             text-align: center;
-            border-bottom: 1px solid #444;
+            border-bottom: 1px solid #333;
             padding-bottom: 8px;
+            margin-bottom: 4px;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
         .movie-link {
-            color: #FFFFFF; /* Full Bright White */
-            font-size: 10px;
+            color: #FFFFFF; 
+            font-size: 10px; /* Restored to a readable size */
             font-weight: bold;
             text-decoration: none;
             padding: 10px;
             border-radius: 6px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.2s ease;
-            line-height: 1.3;
             text-transform: uppercase;
             display: block;
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
         }
 
         .movie-link:hover {
             background: #FFFFFF;
             color: #000;
-            transform: scale(1.02);
         }
 
         .back-btn {
             position: absolute;
             top: 4%;
             left: 5%;
-            color: #FFFFFF; /* Full Bright White */
+            color: #FFFFFF; 
             text-decoration: none;
             font-size: 11px;
             font-weight: 900;
             letter-spacing: 2px;
             text-transform: uppercase;
             z-index: 30;
-            padding: 8px 12px;
-            background: rgba(0,0,0,0.5);
-            border-left: 3px solid #ef4444;
+            padding: 8px 14px;
+            background: rgba(0,0,0,0.7);
+            border-left: 4px solid #ef4444;
             backdrop-filter: blur(5px);
         }
 
-        .back-btn:hover {
-            background: #ef4444;
-            color: #fff;
-        }
-
         .bento-menu::-webkit-scrollbar { width: 4px; }
-        .bento-menu::-webkit-scrollbar-thumb { background: #666; border-radius: 10px; }
+        .bento-menu::-webkit-scrollbar-thumb { background: #555; border-radius: 10px; }
     </style>
 </head>
 <body>
@@ -111,17 +108,9 @@
         <div class="bento-menu">
             <div class="bento-header">NOW SHOWING</div>
             
-            <a href="theater.html?vid=cE0lxvVm7AE" class="movie-link">
-                MASQUERAIDE PODCAST: EP 1
-            </a>
-
-            <a href="theater.html?vid=p8u_k2LIZ_0" class="movie-link">
-                CRYPT TV: THE LOOK-SEE
-            </a>
-            
-            <a href="theater.html?vid=j76uI7G8fXo" class="movie-link">
-                CRYPT TV: BIRCH
-            </a>
+            <a href="theater.html?vid=cE0lxvVm7AE" class="movie-link">MASQUERAIDE PODCAST</a>
+            <a href="theater.html?vid=p8u_k2LIZ_0" class="movie-link">CRYPT TV: LOOK-SEE</a>
+            <a href="theater.html?vid=j76uI7G8fXo" class="movie-link">CRYPT TV: BIRCH</a>
         </div>
     </div>
 
