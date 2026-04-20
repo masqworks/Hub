@@ -27,13 +27,13 @@
             margin: 0 auto;
         }
 
-        /* Removed aspect-ratio here to allow the height to stretch to the frame */
+        /* This container acts as the 'screen' behind your frame */
         .video-wrapper {
             position: absolute;
-            top: 11.2%;    
+            top: 11.1%;    
             left: 9.5%;    
             width: 81%;    
-            height: 18.6%; /* Nudged up from 18.2% to fully close that gap */
+            height: 18.8%; /* Nudged to fully seat behind the dashboard frame */
             z-index: 10;
             overflow: hidden;
             background: #000;
@@ -43,10 +43,11 @@
             width: 100%;
             height: 100%;
             border: none;
-            /* Ensures the video fills the container entirely */
-            object-fit: cover; 
+            /* This forces the thumbnail and video to match the container exactly */
+            object-fit: cover !important; 
         }
 
+        /* Your custom dashboard overlay */
         .screen-structure {
             position: absolute;
             top: 0;
@@ -92,7 +93,7 @@
     <div class="theater-stage">
         <div class="video-wrapper">
             <iframe id="mainPlayer" 
-                    src="https://www.youtube.com/embed/cE0lxvVm7AE?rel=0&modestbranding=1" 
+                    src="https://www.youtube.com/embed/cE0lxvVm7AE?rel=0&modestbranding=1&autoplay=0" 
                     allowfullscreen>
             </iframe>
         </div>
