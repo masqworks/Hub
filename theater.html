@@ -9,7 +9,7 @@
         body { 
             background-color: #09090b; 
             color: #fafafa;
-            overflow-x: hidden;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -28,27 +28,24 @@
             margin: 0 auto;
         }
 
-        /* Adjusted to fill the red frame hole more aggressively */
+        /* Perfectly aligned for the new squared-off frame */
         .video-wrapper {
             position: absolute;
-            top: 15.5%;    /* Nudged down from 14.5 */
-            left: 13.5%;   /* Widened slightly from 14 */
-            width: 73%;    /* Widened from 72 */
-            height: 68%;   /* Increased height from 64 to hit the bottom red line */
+            top: 15.8%;    
+            left: 14%;     
+            width: 72%;    
+            height: 60%;   
             z-index: 10;
-            overflow: hidden;
+            background: #000;
         }
 
         .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             border: none;
         }
 
-        /* Your Custom PNG Layer */
+        /* The New Graphic Layer */
         .screen-structure {
             position: absolute;
             top: 0;
@@ -91,12 +88,10 @@
     <div class="theater-stage">
         <div class="video-wrapper">
             <iframe id="mainPlayer" 
-                    src="https://www.youtube.com/embed/cE0lxvVm7AE?rel=0&modestbranding=1&controls=1" 
-                    allow="autoplay; encrypted-media" 
+                    src="https://www.youtube.com/embed/cE0lxvVm7AE?rel=0&modestbranding=1&autoplay=0" 
                     allowfullscreen>
             </iframe>
         </div>
-        
         <div class="screen-structure"></div>
     </div>
 
