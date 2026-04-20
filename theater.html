@@ -9,11 +9,11 @@
         body { 
             background-color: #09090b; 
             color: #fafafa;
-            overflow-x: hidden;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
             min-height: 100vh;
             margin: 0;
             padding: 0;
@@ -22,19 +22,21 @@
         .theater-stage {
             position: relative;
             width: 100%;
-            max-width: 500px; /* Limits width on desktop so it stays vertical */
-            aspect-ratio: 9/16; /* Changed to match your new tall image */
+            max-width: 450px; 
+            aspect-ratio: 9/16; 
             margin: 0 auto;
+            background-color: #000;
         }
 
-        /* Video positioning for the new taller layout */
+        /* Matches the 16:9 rectangle in your editor */
         .video-wrapper {
             position: absolute;
-            top: 10.5%;    
+            top: 11.2%;    /* Aligned with your new top frame position */
             left: 10%;     
             width: 80%;    
-            height: 18%;   /* YouTube is 16:9, so it only needs a small slice of the tall image */
+            aspect-ratio: 16/9; 
             z-index: 10;
+            overflow: hidden;
             background: #000;
         }
 
@@ -44,6 +46,7 @@
             border: none;
         }
 
+        /* The Graphic Layer with your new frame */
         .screen-structure {
             position: absolute;
             top: 0;
@@ -59,18 +62,28 @@
         }
 
         .exit-link {
-            margin: 20px 0 40px 0;
+            position: absolute;
+            bottom: 6%;
+            left: 50%;
+            transform: translateX(-50%);
             text-transform: uppercase;
             letter-spacing: 0.4em;
             font-size: 10px;
             font-weight: 900;
-            color: #52525b;
+            color: #71717a;
             text-decoration: none;
             transition: all 0.3s;
             border: 1px solid #27272a;
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 6px;
-            background: rgba(18, 18, 18, 0.5);
+            background: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(4px);
+            z-index: 30;
+        }
+
+        .exit-link:hover {
+            color: #ffffff;
+            border-color: #dc2626;
         }
     </style>
 </head>
@@ -84,9 +97,8 @@
             </iframe>
         </div>
         <div class="screen-structure"></div>
+        <a href="index.html" class="exit-link">Return to Hub</a>
     </div>
-
-    <a href="index.html" class="exit-link">Return to Hub</a>
 
 </body>
 </html>
