@@ -28,9 +28,9 @@
         .bento-menu {
             position: absolute;
             top: 25%;
-            left: 45%; /* Shifted slightly left to accommodate the extra width */
-            width: 50%; /* Widened for better text fit */
-            max-height: 42%; 
+            left: 45%; 
+            width: 50%; 
+            max-height: 45%; 
             background: rgba(0, 0, 0, 0.94); 
             backdrop-filter: blur(12px); 
             border: 2px solid #FFFFFF; 
@@ -38,7 +38,7 @@
             padding: 14px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px; /* Slightly more gap for wrapped text */
             overflow-y: auto;
             z-index: 20;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
@@ -58,20 +58,26 @@
 
         .movie-link {
             color: #FFFFFF; 
-            font-size: 10px; /* Restored to a readable size */
+            font-size: 10px; 
             font-weight: bold;
             text-decoration: none;
-            padding: 10px;
+            padding: 12px 8px; /* More vertical padding for wrapped text */
             border-radius: 6px;
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.2s ease;
             text-transform: uppercase;
-            display: block;
-            white-space: nowrap; 
-            overflow: hidden;
-            text-overflow: ellipsis;
+            
+            /* Flexbox for centering wrapped text */
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            
+            /* Allow wrapping */
+            white-space: normal; 
+            word-wrap: break-word;
+            line-height: 1.4;
         }
 
         .movie-link:hover {
@@ -108,9 +114,17 @@
         <div class="bento-menu">
             <div class="bento-header">NOW SHOWING</div>
             
-            <a href="theater.html?vid=cE0lxvVm7AE" class="movie-link">Masqueraide Workshop - Podcast</a>
-            <a href="theater.html?vid=p8u_k2LIZ_0" class="movie-link">CRYPT TV: LOOK-SEE</a>
-            <a href="theater.html?vid=j76uI7G8fXo" class="movie-link">CRYPT TV: BIRCH</a>
+            <a href="theater.html?vid=cE0lxvVm7AE" class="movie-link">
+                MASQUERAIDE WORKSHOP: PODCAST GUEST
+            </a>
+            
+            <a href="theater.html?vid=p8u_k2LIZ_0" class="movie-link">
+                CRYPT TV: LOOK-SEE
+            </a>
+            
+            <a href="theater.html?vid=j76uI7G8fXo" class="movie-link">
+                CRYPT TV: BIRCH
+            </a>
         </div>
     </div>
 
