@@ -3,87 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workshop Archives | Masqueraide Workshop</title>
+    <title>Masqueraide Workshop | The Vault</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { 
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.9)), url('vectorstock_751427.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             background-color: #09090b; 
             color: #fafafa;
-            font-family: ui-sans-serif, system-ui, sans-serif;
         }
+        .video-card {
+            background: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .video-card:hover { border-color: #dc2626; }
         
-        /* The clean, dark-mode card style from the early builds */
-        .video-entry {
-            background: #121214;
-            border: 1px solid #1c1c1f;
-            transition: all 0.2s ease-in-out;
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 0.75rem;
         }
-
-        .video-entry:hover {
-            border-color: #3f3f46;
-            background: #18181b;
-        }
-
-        .category-tag {
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: #ef4444; /* Masqueraide Red */
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
-<body class="p-4 md:p-10">
+<body class="p-6">
 
-    <div class="max-w-6xl mx-auto">
-        <div class="flex justify-between items-center mb-10 border-b border-zinc-800 pb-6">
-            <h1 class="text-2xl font-black tracking-tight uppercase italic">Workshop Archives</h1>
-            <a href="index.html" class="text-xs font-bold text-zinc-500 hover:text-white transition uppercase tracking-widest">
-                Close & Return
+    <header class="max-w-5xl mx-auto mb-12 text-center">
+        <a href="index.html">
+            <img src="Logopit_1610381027557.png" alt="Masqueraide Workshop" class="w-48 mx-auto mb-4">
+        </a>
+        <h1 class="text-white uppercase tracking-[0.4em] text-sm font-black italic drop-shadow-lg">Technical Masterclasses</h1>
+    </header>
+
+    <main class="max-w-6xl mx-auto">
+        <h2 class="text-red-600 font-bold tracking-widest uppercase text-xs mb-6 border-l-2 border-red-600 pl-4">The Hairing Trilogy</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            
+            <div class="video-card p-3 rounded-2xl">
+                <div class="video-wrapper mb-3">
+                    <iframe src="https://www.youtube.com/embed/BplulFDlSbE" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <h3 class="font-bold text-sm text-center">Part 1: The Foundation</h3>
+            </div>
+
+            <div class="video-card p-3 rounded-2xl">
+                <div class="video-wrapper mb-3">
+                    <iframe src="https://www.youtube.com/embed/NvEnjfmECv8" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <h3 class="font-bold text-sm text-center">Part 2: Technique</h3>
+            </div>
+
+            <div class="video-card p-3 rounded-2xl">
+                <div class="video-wrapper mb-3">
+                    <iframe src="https://www.youtube.com/embed/RknKJ_q51ZA" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <h3 class="font-bold text-sm text-center">Part 3: The Finish</h3>
+            </div>
+        </div>
+
+        <h2 class="text-red-600 font-bold tracking-widest uppercase text-xs mb-6 border-l-2 border-red-600 pl-4">Paint & Weathering</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="video-card p-3 rounded-2xl">
+                <div class="video-wrapper mb-3">
+                    <iframe src="https://www.youtube.com/embed/PSrO8ZKj84o" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <h3 class="font-bold text-sm">Michael Myers Paint Masterclass</h3>
+                <p class="text-[10px] text-zinc-400 mt-1">Deep dive into cinematic weathering.</p>
+            </div>
+            
+            <div class="video-card p-8 rounded-2xl flex flex-col justify-center items-center text-center border-dashed">
+                <h3 class="font-black italic text-xl mb-2">Want More?</h3>
+                <p class="text-zinc-400 text-xs mb-6 uppercase tracking-widest">120+ tutorials on the full channel</p>
+                <a href="https://youtube.com/@masqueraideworkshop" target="_blank" class="bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 px-8 rounded-full transition-all uppercase text-[10px] tracking-widest">
+                    Enter the Full Channel
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-4 mb-16">
+            <a href="https://youtube.com/@masqueraideworkshop?sub_confirmation=1" target="_blank" class="block w-full bg-white text-black hover:bg-red-600 hover:text-white transition-all duration-300 rounded-2xl p-6 text-center shadow-[0_0_30px_rgba(220,38,38,0.2)] group">
+                <h3 class="text-xl font-black uppercase italic tracking-tighter">Join the Workshop</h3>
+                <p class="text-[10px] uppercase tracking-[0.3em] font-bold opacity-60 group-hover:opacity-100 transition-opacity">
+                    Tap 'Subscribe' on the next page ↴
+                </p>
             </a>
         </div>
+    </main>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            <div class="video-entry rounded-lg overflow-hidden">
-                <div class="aspect-video bg-black">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="p-4">
-                    <span class="category-tag">Technical Tutorial</span>
-                    <h2 class="text-base font-bold mt-1 text-zinc-100">Silicone Basics: Part 1</h2>
-                </div>
-            </div>
-
-            <div class="video-entry rounded-lg overflow-hidden">
-                <div class="aspect-video bg-black">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="p-4">
-                    <span class="category-tag">Artistry</span>
-                    <h2 class="text-base font-bold mt-1 text-zinc-100">Fine Detail Airbrushing</h2>
-                </div>
-            </div>
-
-            <div class="video-entry rounded-lg overflow-hidden">
-                <div class="aspect-video bg-black">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="p-4">
-                    <span class="category-tag">Studio Life</span>
-                    <h2 class="text-base font-bold mt-1 text-zinc-100">Workshop Setup & Safety</h2>
-                </div>
-            </div>
-
+    <footer class="mt-12 py-8 text-center border-t border-white/10 max-w-xl mx-auto">
+        <div class="flex justify-center gap-6 mb-4">
+            <a href="index.html" class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition">Back to Hub</a>
+            <a href="mailto:masqworks@gmail.com" class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 hover:text-red-600 transition">Contact</a>
         </div>
-
-        <div class="mt-16 flex justify-center border-t border-zinc-800 pt-10">
-            <nav class="flex gap-2">
-                <button class="px-4 py-2 bg-zinc-900 border border-zinc-800 text-zinc-400 text-xs font-bold uppercase rounded">Prev</button>
-                <button class="px-4 py-2 bg-zinc-800 border border-zinc-700 text-white text-xs font-bold uppercase rounded">Next Page</button>
-            </nav>
-        </div>
-    </div>
+        <p class="text-zinc-500 text-[8px] uppercase tracking-tighter">&copy; 2026 Masqueraide Workshop LLC</p>
+    </footer>
 
 </body>
 </html>
