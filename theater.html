@@ -25,15 +25,14 @@
             max-width: 450px; 
             aspect-ratio: 9/16; 
             margin: 0 auto;
-            background-color: #000;
         }
 
-        /* Matches the 16:9 rectangle in your editor */
+        /* The "Tuck" Strategy: Slightly larger to hide edges under your frame */
         .video-wrapper {
             position: absolute;
-            top: 11.2%;    /* Aligned with your new top frame position */
-            left: 10%;     
-            width: 80%;    
+            top: 10.8%;    /* Nudged up from 11.2% to close that top gap */
+            left: 9.5%;    /* Widened slightly to tuck behind the sides */
+            width: 81%;    
             aspect-ratio: 16/9; 
             z-index: 10;
             overflow: hidden;
@@ -46,7 +45,6 @@
             border: none;
         }
 
-        /* The Graphic Layer with your new frame */
         .screen-structure {
             position: absolute;
             top: 0;
