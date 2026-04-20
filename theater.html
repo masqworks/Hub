@@ -27,13 +27,13 @@
             margin: 0 auto;
         }
 
-        /* Adjusted to fully bridge the gap at the bottom of the frame */
+        /* Removed aspect-ratio here to allow the height to stretch to the frame */
         .video-wrapper {
             position: absolute;
             top: 11.2%;    
             left: 9.5%;    
             width: 81%;    
-            height: 18.2%; /* Increased height to tuck behind the bottom metal bar */
+            height: 18.6%; /* Nudged up from 18.2% to fully close that gap */
             z-index: 10;
             overflow: hidden;
             background: #000;
@@ -43,6 +43,8 @@
             width: 100%;
             height: 100%;
             border: none;
+            /* Ensures the video fills the container entirely */
+            object-fit: cover; 
         }
 
         .screen-structure {
