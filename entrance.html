@@ -30,30 +30,32 @@
             top: 25%;
             left: 45%; 
             width: 50%; 
-            max-height: 45%; 
+            max-height: 48%; /* Slightly taller to fit the larger header */
             background: rgba(0, 0, 0, 0.94); 
             backdrop-filter: blur(12px); 
             border: 2px solid #FFFFFF; 
             border-radius: 12px;
-            padding: 14px;
+            padding: 16px;
             display: flex;
             flex-direction: column;
-            gap: 12px; /* Slightly more gap for wrapped text */
+            gap: 12px;
             overflow-y: auto;
             z-index: 20;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
         }
 
+        /* Scaled up to match the Marquee sign's presence */
         .bento-header {
             color: #ef4444; 
-            font-size: 11px;
+            font-size: 18px; /* Significantly larger */
             font-weight: 900;
             text-align: center;
-            border-bottom: 1px solid #333;
-            padding-bottom: 8px;
-            margin-bottom: 4px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 6px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 4px; /* Spread out like a real marquee */
+            text-shadow: 0 0 10px rgba(239, 68, 68, 0.4); /* Subtle red glow */
         }
 
         .movie-link {
@@ -61,20 +63,16 @@
             font-size: 10px; 
             font-weight: bold;
             text-decoration: none;
-            padding: 12px 8px; /* More vertical padding for wrapped text */
+            padding: 12px 8px; 
             border-radius: 6px;
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.2s ease;
             text-transform: uppercase;
-            
-            /* Flexbox for centering wrapped text */
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            
-            /* Allow wrapping */
             white-space: normal; 
             word-wrap: break-word;
             line-height: 1.4;
@@ -115,7 +113,7 @@
             <div class="bento-header">NOW SHOWING</div>
             
             <a href="theater.html?vid=cE0lxvVm7AE" class="movie-link">
-                MASQUERAIDE WORKSHOP: PODCAST GUEST
+                MASQUERAIDE WORKSHOP - PODCAST
             </a>
             
             <a href="theater.html?vid=p8u_k2LIZ_0" class="movie-link">
