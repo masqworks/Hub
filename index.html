@@ -15,7 +15,6 @@
             color: #fafafa;
             margin: 0;
             padding: 0;
-            overflow: hidden;
         }
 
         .bento-card { 
@@ -36,15 +35,32 @@
 
     <main class="max-w-md w-full space-y-2.5">
         
-        <a href="watch.html" class="bento-card p-4 rounded-2xl flex items-center justify-between group">
+        <a href="theater.html" class="bento-card p-5 rounded-2xl flex items-center justify-between group border-red-900/40">
             <div class="flex items-center gap-4">
-                <span class="text-lg text-red-600 font-bold">YT</span>
+                <div class="relative">
+                    <span class="text-lg text-red-600 font-black">DRV</span>
+                    <span class="absolute -top-1 -right-1 flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
+                    </span>
+                </div>
                 <div>
-                    <h2 class="font-bold text-base leading-tight">Technical Masterclasses</h2>
-                    <p class="text-zinc-300 text-[10px]">Hairing & Painting Guides</p>
+                    <h2 class="font-bold text-base leading-tight text-white">Masqworks Drive-In</h2>
+                    <p class="text-zinc-300 text-[10px] uppercase tracking-wider font-bold">Now Showing: The Podcast</p>
                 </div>
             </div>
-            <span class="text-zinc-400 group-hover:text-white transition text-sm">&rarr;</span>
+            <span class="text-zinc-400 group-hover:text-white transition text-sm">ENTER</span>
+        </a>
+
+        <a href="theater.html" class="bento-card p-5 rounded-2xl flex items-center justify-between group border-blue-900/40">
+            <div class="flex items-center gap-4">
+                <span class="text-lg text-blue-500 font-black">ARC</span>
+                <div>
+                    <h2 class="font-bold text-base leading-tight text-white">Workshop Archives</h2>
+                    <p class="text-zinc-300 text-[10px] uppercase tracking-wider font-bold">Technical Masterclasses</p>
+                </div>
+            </div>
+            <span class="text-zinc-400 group-hover:text-white transition text-sm">VIEW</span>
         </a>
 
         <a href="https://www.tiktok.com/@masqueraide_workshop?_r=1&_t=ZT-95ftzPB1BVO" target="_blank" class="bento-card p-4 rounded-2xl flex items-center justify-between group">
@@ -71,7 +87,7 @@
 
     </main>
 
-    <footer class="max-w-md w-full mt-4 pt-4 border-t border-white/10 text-center">
+    <footer class="max-w-md w-full mt-4 pt-4 border-t border-white/10 text-center pb-8">
         <h3 class="text-[9px] font-bold uppercase tracking-widest text-zinc-200 mb-1 drop-shadow-md">Contact Us</h3>
         <a href="mailto:masqworks@gmail.com" class="text-sm font-medium text-white drop-shadow-md hover:text-red-600 transition-colors">
             masqworks@gmail.com
