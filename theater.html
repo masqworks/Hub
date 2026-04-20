@@ -28,13 +28,13 @@
             margin: 0 auto;
         }
 
-        /* The Video Layer - Using "object-fit: cover" logic to fill the hole */
+        /* Adjusted to fill the red frame hole more aggressively */
         .video-wrapper {
             position: absolute;
-            top: 14.5%;    /* Nudged up slightly from 15.5 */
-            left: 14%;     
-            width: 72%;    
-            height: 64%;   /* Increased height to fill the red box vertically */
+            top: 15.5%;    /* Nudged down from 14.5 */
+            left: 13.5%;   /* Widened slightly from 14 */
+            width: 73%;    /* Widened from 72 */
+            height: 68%;   /* Increased height from 64 to hit the bottom red line */
             z-index: 10;
             overflow: hidden;
         }
@@ -46,10 +46,9 @@
             width: 100%;
             height: 100%;
             border: none;
-            object-fit: cover; /* Forces the video to fill the container */
         }
 
-        /* Your Custom PNG Layer (Always on top) */
+        /* Your Custom PNG Layer */
         .screen-structure {
             position: absolute;
             top: 0;
@@ -59,7 +58,7 @@
             pointer-events: none; 
             z-index: 20;
             background-image: url('drive_in_screen.png'); 
-            background-size: 100% 100%; /* Changed from 'contain' to match stage exactly */
+            background-size: 100% 100%;
             background-position: center;
             background-repeat: no-repeat;
         }
