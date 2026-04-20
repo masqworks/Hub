@@ -13,49 +13,45 @@
             height: 100%;
             background-color: #000;
             display: flex;
-            flex-direction: column; /* Stacks everything vertically */
+            flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* Starts content at the top */
+            justify-content: flex-start;
             overflow: hidden;
             font-family: sans-serif;
         }
 
-        /* 1. The Background Layer: Drive-In Vibe only */
         .theater-stage {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            /* Your NEW background image file goes here */
             background-image: url('drive_in_bg_static.png'); 
-            background-size: cover; /* Fills the whole screen, crops if needed */
-            background-position: center bottom; /* Keeps the 'ground' and cars in view */
+            background-size: cover;
+            background-position: center bottom;
             background-repeat: no-repeat;
-            z-index: 1; /* Sits at the bottom */
+            z-index: 1;
         }
 
-        /* 2. The Video Container: A perfect, clean container on top */
         .video-player-container {
             position: relative;
             width: 100%;
-            max-width: 450px; /* Limits size on desktop */
-            aspect-ratio: 9/16; /* Maintains the 'phone' shape */
+            max-width: 450px;
+            aspect-ratio: 9/16;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Puts the video near the top */
-            z-index: 10; /* Sits ON TOP of the background */
-            margin-top: 10vh; /* Pushes the video down slightly from the very edge */
+            align-items: flex-start;
+            z-index: 10;
+            margin-top: 10vh;
         }
 
-        /* The actual video player slot */
         .video-frame {
             position: relative;
-            width: 90%; /* Leaves a 5% margin on left/right for a cleaner look */
-            aspect-ratio: 16/9; /* The standard video ratio */
+            width: 90%;
+            aspect-ratio: 16/9;
             background-color: #000;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Adds depth to the screen */
-            border: 2px solid #222; /* Clean, dark frame */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            border: 2px solid #222;
             overflow: hidden;
             border-radius: 6px;
         }
@@ -67,7 +63,6 @@
             display: block;
         }
 
-        /* 3. The Title Overlay */
         .title-overlay {
             position: absolute;
             top: 2vh;
@@ -88,7 +83,6 @@
             border-radius: 4px;
         }
 
-        /* 4. The Exit button */
         .exit-link {
             position: absolute;
             bottom: 5vh;
@@ -118,13 +112,29 @@
     <div class="video-player-container">
         <div class="video-frame">
             <iframe 
-                src="https://www.youtube.com/embed/cE0lxvVm7AE?modestbranding=1&rel=0" 
+                id="movieScreen"
+                src="" 
+                allow="autoplay; encrypted-media" 
                 allowfullscreen>
             </iframe>
         </div>
     </div>
 
-    <a href="index.html" class="exit-link">RETURN TO HUB</a>
+    <a href="entrance.html" class="exit-link">RETURN TO BOX OFFICE</a>
+
+    <script>
+        // Grab the vid ID from the link (e.g., theater.html?vid=p8u_k2LIZ_0)
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoId = urlParams.get('vid');
+        const screen = document.getElementById('movieScreen');
+
+        // If a video ID is found, load it. If not, default to the podcast.
+        if (videoId) {
+            screen.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0`;
+        } else {
+            screen.src = `https://www.youtube.com/embed/cE0lxvVm7AE?autoplay=1&modestbranding=1&rel=0`;
+        }
+    </script>
 
 </body>
 </html>
